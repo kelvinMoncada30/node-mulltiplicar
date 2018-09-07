@@ -1,0 +1,67 @@
+visitar nodejs.org  en docs vemos la version 
+buscamos File System es que como node guarda en archivos de texto
+copiamos esta linea 
+const fs = require('fs');
+
+hay 3 tipos de require
+una es propia de node ya esta definida y no hay que hacer nada mas
+otra es como const fs = require('express'); que no es propia de node o paquetes no nativos
+
+y estan los que nosotros creamos.
+
+
+para escribir
+fs.writeFile('message.txt', 'Hello Node.js', (err) => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+});
+
+fs hace referencia al paquete que acabamos de importar osea lo de requiere
+
+
+----
+toda la logica siempre debe ir fuera del archivo original
+podemos usar el module para exportar de un archivo a otro
+module.exports={
+   crearArchivo
+} donde queremo exportar
+donde  lo necesitamos
+
+const multiplicar=require('./multiplicar/multiplicar.js');
+pero se destructura para evitar poner multiplicar.algo
+const {crearArchivo}=require('./multiplicar/multiplicar.js');
+
+
+------
+
+process.agrv mostrar por decir asi una tabla en la cual podemos agregar argumentos
+split convierte string en arreglo 
+---
+iniciar la termianl
+npm init  inicialosmos archivos que nos ayudara a guiarnos para la elaboracion de un archivo backet,json
+
+package name 
+version       nosotros la eligimos
+description   que es lo que hace el programa
+entry point    el primer archivo que se ejecutara
+test command  comando de prueba
+git repository
+keywords      repositorio publico y lo necesitamos subir
+author
+lecensse
+
+el package.json es importante cuando se mueve el proyecto porque se hara una referencia a las dependecias
+                 que son todas librerias y packetes que necesitan para poder ejecutarse
+
+npm i yargs --save
+
+el package-look.json  todos los paquetes que tuvo que obtener para tener el yards
+
+carpeta node-module son plugin para que las dependencias (yards ejemplo) funcionen   
+                     este no se sube como repositorio se borra y lo unico que se hace es poner npm install
+
+npm install --save-dev nodemon no necesita permisos de desarrollador porque solo correra en el poryecto
+npm uninstall nodemom para quitar un paquete
+----
+siempre hay que optimizar nuestro js por eso es mejor ponerlo en otr carperta commando
+config-yargs.js
